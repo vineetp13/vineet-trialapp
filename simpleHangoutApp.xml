@@ -48,6 +48,12 @@
     onClick="showParticipants()"/>
 </p>
 
+<p>
+<input class="button" type="button" value="Show participants!" id="showParticipants2" 
+    style="visibility:hidden;"
+    onClick="showParticipants2()"/>
+</p>
+
 <div id="participantsDiv"></div>
 
 <hr>
@@ -102,7 +108,7 @@ function init() {
   gapi.hangout.onApiReady.add(
       function(eventObj) {
         if (eventObj.isApiReady) {
-          document.getElementById('showParticipants2')
+          document.getElementById('showParticipants')
             .style.visibility = 'visible';
         }
       });
