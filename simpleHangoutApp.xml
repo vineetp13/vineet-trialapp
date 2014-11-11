@@ -60,6 +60,11 @@ container.appendChild(input);
 
 <p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
 
+<textarea>
+This is where the user can enter text...
+</textarea>
+
+
 <script>
 function showParticipants() {
   var participants = gapi.hangout.getParticipants();
@@ -102,6 +107,8 @@ function showParticipants3() {
 
   div.innerHTML = retVal;
 }
+
+
 
 function init() {
   // When API is ready...                                                         
