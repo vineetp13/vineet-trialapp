@@ -52,7 +52,6 @@
     onClick="shareState()"/>    
 </p>
 
-
 <div id="participantsDiv"></div>
 
 <div id="shareStateDiv"></div>
@@ -72,8 +71,6 @@ This is where the user can enter text...
     style="visibility:hidden;"
     onClick="passState()"/>    
 </p>
-
-
 
 <script>
 function showParticipants() {
@@ -111,13 +108,13 @@ function passData(){
 }
 
 gapi.hangout.data.onStateChanged.add( function(event) {
-    	var retVal = '<p> Passed state is: </p> <ul>';
+    var retVal = '<p> Passed state is: </p> <ul>';
 	
 	//insert meat here
 	retVal += '<li> event.state[‘key01’]</li>';
 	
 	retVal += '</ul>';
-	var div = document.getElementById('shareStateDiv');
+	var div = document.getElementById('passedStateDiv');
 	div.innerHTML = retVal;
     
 } );
