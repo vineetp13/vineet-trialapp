@@ -103,15 +103,15 @@ function shareState() {
 	var div = document.getElementById('shareStateDiv');
 	div.innerHTML = retVal;}
 	
-function passData(){
+function passState(){
 	gapi.hangout.data.submitDelta({key01: sample_text});
 }
 
 gapi.hangout.data.onStateChanged.add( function(event) {
     var retVal = '<p> Passed state is: </p> <ul>';
-	
+	var text = event.state[‘key01’];
 	//insert meat here
-	retVal += '<li> event.state[‘key01’]</li>';
+	retVal += '<li>' + event.state[‘key01’] + '</li>';
 	
 	retVal += '</ul>';
 	var div = document.getElementById('passedStateDiv');
