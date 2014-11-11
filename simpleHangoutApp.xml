@@ -50,7 +50,7 @@
 
 <p>
 <input class="button" type="button" value="Show2 participants!" id="showParticipants2" 
-    style="visibility:hidden;"
+    style="visibility:visible;"
     onClick="showParticipants2()"/>
 </p>
 
