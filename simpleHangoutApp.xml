@@ -48,17 +48,12 @@
     onClick="showParticipants()"/>
 </p>
 
-var input = document.createElement('input'); 
-input.type = "text"; 
-//...    
-container.appendChild(input);
-
 
 <div id="participantsDiv"></div>
 
 <hr>
 
-<p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
+<p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts! vineet</a></p>
 
 <textarea>
 This is where the user can enter text...
