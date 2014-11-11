@@ -49,7 +49,7 @@
 </p>
 
 <p>
-<input class="button" type="button" value="Show participants!" id="showParticipants2" 
+<input class="button" type="button" value="Show2 participants!" id="showParticipants2" 
     style="visibility:hidden;"
     onClick="showParticipants2()"/>
 </p>
