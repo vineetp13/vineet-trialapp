@@ -76,6 +76,8 @@ function showParticipants() {
   div.innerHTML = retVal;
 }
 
+
+
 function init() {
   // When API is ready...                                                         
   gapi.hangout.onApiReady.add(
@@ -84,7 +86,12 @@ function init() {
           document.getElementById('showParticipants')
             .style.visibility = 'visible';
         }
-      });
+      }
+var input = document.createElement('input'); 
+input.type = "text"; 
+//...    
+container.appendChild(input);
+  );
 }
 
 // Wait for gadget to load.                                                       
