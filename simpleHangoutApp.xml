@@ -108,7 +108,7 @@ function init() {
   gapi.hangout.onApiReady.add(
       function(eventObj) {
         if (eventObj.isApiReady) {
-          document.getElementById('showParticipants')
+          document.getElementById('showParticipants2')
             .style.visibility = 'visible';
         }
       });
