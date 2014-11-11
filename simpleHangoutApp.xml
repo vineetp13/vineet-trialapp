@@ -46,10 +46,16 @@
 <input class="button" type="button" value="Show participants!" id="showParticipants" 
     style="visibility:hidden;"
     onClick="showParticipants()"/>
+    
+<input class="button" type="button" value="Share state!" id="shareState" 
+    style="visibility:hidden;"
+    onClick="shareState()"/>    
 </p>
 
 
 <div id="participantsDiv"></div>
+
+<div id="shareStateDiv"></div>
 
 <hr>
 
@@ -82,28 +88,14 @@ function showParticipants() {
   div.innerHTML = retVal;
 }
 
-function showParticipants3() {
-  var participants = gapi.hangout.getParticipants();
-
-  var retVal = '<p>Participants: </p><ul>';
-
-  for (var index in participants) {
-    var participant = participants[index];
-
-    if (!participant.person) {
-      retVal += '<li>A participant not running this app</li>';
-    }
-    retVal += '<li>' + participant.person.displayName + '</li>';
-  }
-
-  retVal += '</ul>';
-
-  var div = document.getElementById('participantsDiv');
-
-  div.innerHTML = retVal;
-}
-
-
+function showState() {
+	var retVal = '<p> Output is: </p> <ul>';
+	
+	//insert meat here
+	
+	retVal += '</ul>';
+	var div = document.getElementById('shareStateDiv');
+	div.innerHTML = retVal;}
 
 function init() {
   // When API is ready...                                                         
@@ -111,6 +103,10 @@ function init() {
       function(eventObj) {
         if (eventObj.isApiReady) {
           document.getElementById('showParticipants')
+            .style.visibility = 'visible';
+        }
+        if (eventObj.isApiReady) {
+        document.getElementById('shareState')
             .style.visibility = 'visible';
         }
       });
