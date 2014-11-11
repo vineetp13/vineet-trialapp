@@ -88,7 +88,7 @@ function showParticipants() {
   div.innerHTML = retVal;
 }
 
-function showState() {
+function shareState() {
 	var retVal = '<p> Output is: </p> <ul>';
 	
 	//insert meat here
