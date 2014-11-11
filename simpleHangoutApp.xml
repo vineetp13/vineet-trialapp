@@ -57,6 +57,8 @@
 
 <div id="shareStateDiv"></div>
 
+<div id="passedStateDiv"></div>
+
 <hr>
 
 <p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts! vineet</a></p>
@@ -64,6 +66,13 @@
 <textarea>
 This is where the user can enter text...
 </textarea>
+
+<p>
+<input class="button" type="button" value="Pass state!" id="passState" 
+    style="visibility:hidden;"
+    onClick="passState()"/>    
+</p>
+
 
 
 <script>
@@ -96,6 +105,22 @@ function shareState() {
 	retVal += '</ul>';
 	var div = document.getElementById('shareStateDiv');
 	div.innerHTML = retVal;}
+	
+function passData(){
+	gapi.hangout.data.submitDelta({key01: sample_text});
+}
+
+gapi.hangout.data.onStateChanged.add( function(event) {
+    	var retVal = '<p> Passed state is: </p> <ul>';
+	
+	//insert meat here
+	retVal += '<li> event.state[‘key01’]</li>';
+	
+	retVal += '</ul>';
+	var div = document.getElementById('shareStateDiv');
+	div.innerHTML = retVal;
+    
+} );
 
 function init() {
   // When API is ready...                                                         
@@ -107,6 +132,10 @@ function init() {
         }
         if (eventObj.isApiReady) {
         document.getElementById('shareState')
+            .style.visibility = 'visible';
+        }
+        if (eventObj.isApiReady) {
+        document.getElementById('passState')
             .style.visibility = 'visible';
         }
       });
