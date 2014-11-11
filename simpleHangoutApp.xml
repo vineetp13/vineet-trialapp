@@ -76,6 +76,16 @@ function showParticipants() {
   div.innerHTML = retVal;
 }
 
+function display(id) {
+var obj = document.getElementById(id)
+if (obj.style.display == "none") {
+obj.style.display = "block"
+    }
+else {
+    obj.style.display = "none"
+    }
+return false
+}
 
 
 function init() {
@@ -85,13 +95,10 @@ function init() {
         if (eventObj.isApiReady) {
           document.getElementById('showParticipants')
             .style.visibility = 'visible';
+            document.getElementById('display')
+            .style.visibility = 'visible';
         }
-      }
-var input = document.createElement('input'); 
-input.type = "text"; 
-//...    
-container.appendChild(input);
-  );
+      });
 }
 
 // Wait for gadget to load.                                                       
