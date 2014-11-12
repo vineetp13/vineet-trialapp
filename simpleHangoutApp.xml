@@ -112,7 +112,7 @@ gapi.hangout.data.onStateChanged.add( function(event) {
     console.log(event.state.key01);
 	
 	//insert meat here
-	retVal += '<li>' + event.state[‘key01’] + '</li>';
+	retVal += '<li>' + event.state.key01 + '</li>';
 	
 	retVal += '</ul>';
 	var div = document.getElementById('passedStateDiv');
