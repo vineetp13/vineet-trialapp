@@ -104,15 +104,27 @@ function shareState() {
 	div.innerHTML = retVal;}
 	
 function passState(){
-	gapi.hangout.data.submitDelta({key01: "sample_text"});
+	gapi.hangout.data.submitDelta({gapi.hangout.getParticipantId(): "sample_text"});
 }
 
 gapi.hangout.data.onStateChanged.add( function(event) {
-    var retVal = '<p> Passed state is: </p> <ul>';
-    console.log(event.state.key01);
-	
+	var participants = gapi.hangout.getParticipants();
+	var retVal = '<p> Passed state is: </p> <ul>';
+
+    for (var index in participants) {
+    var participant = participants[index];
+    var id_used= participant.person.id;
+    
+    console.log(event.state.id_used);
+
+    if (!participant.person) {
+      retVal += '<li>A participant not running this app</li>';
+    }
+    retVal += '<li>' + event.state.id_used + '</li>';
+  }
+  
 	//insert meat here
-	retVal += '<li>' + event.state.key01 + '</li>';
+	//retVal += '<li>' + event.state.key01 + '</li>';
 	
 	retVal += '</ul>';
 	var div = document.getElementById('passedStateDiv');
@@ -138,7 +150,7 @@ function init() {
         }
       });
       
-      gapi.hangout.data.submitDelta({key1: vineet});
+      gapi.hangout.data.submitDelta({key1: "vineet"});
       
       var state = gapi.hangout.data.getState();
       console.log(state.key1);
