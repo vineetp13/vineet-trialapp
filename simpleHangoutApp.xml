@@ -104,7 +104,7 @@ function shareState() {
 	div.innerHTML = retVal;}
 	
 function passState(){
-	gapi.hangout.data.submitDelta({key01: sample_text});
+	gapi.hangout.data.submitDelta({key01: "sample_text"});
 }
 
 gapi.hangout.data.onStateChanged.add( function(event) {
