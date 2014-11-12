@@ -109,7 +109,7 @@ function passState(){
 
 gapi.hangout.data.onStateChanged.add( function(event) {
     var retVal = '<p> Passed state is: </p> <ul>';
-    console.log(event.state[‘key01’]);
+    console.log(event.state.key01);
 	
 	//insert meat here
 	retVal += '<li>' + event.state[‘key01’] + '</li>';
