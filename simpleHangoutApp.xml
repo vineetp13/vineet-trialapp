@@ -152,10 +152,10 @@ function init() {
         }
       });
       
-      gapi.hangout.data.submitDelta({key1: "vineet"});
+     // gapi.hangout.data.submitDelta({key1: "vineet"});
       
-      var state = gapi.hangout.data.getState();
-      console.log(state.key1);
+      //var state = gapi.hangout.data.getState();
+      //console.log(state.key1);
 }
 
 
