@@ -113,12 +113,13 @@ gapi.hangout.data.onStateChanged.add( function(event) {
 	var participants = gapi.hangout.getParticipants();
 	var retVal = '<p> Passed state is: </p> <ul>';
 	
-	console.log("tada!")
+	console.log("tada!");
 
     for (var index in participants) {
     var participant = participants[index];
     var id_used= participant.person.id;
     
+    console.log("again");
     console.log(event.state.id_used);
 
     if (!participant.person) {
