@@ -107,6 +107,7 @@ function passState(){
 	id_new = gapi.hangout.getParticipantId();
 	console.log(id_new);
 	gapi.hangout.data.submitDelta({id_new: "sample_text"});
+	console.log("sent");
 }
 
 gapi.hangout.data.onStateChanged.add( function(event) {
