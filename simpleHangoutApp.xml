@@ -110,6 +110,9 @@ function passState(){
 }
 
 gapi.hangout.data.onStateChanged.add( function(event) {
+		console.log("why!");
+
+
 	var participants = gapi.hangout.getParticipants();
 	var retVal = '<p> Passed state is: </p> <ul>';
 	
